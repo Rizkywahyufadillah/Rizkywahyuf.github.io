@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Devote Design - Daftar Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/icon_logo.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style>
+    body {
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* logo */
+    .logo img{
+      height:85px;
+      margin-left: 15px;
+      position: absolute;
+    }
+
+   /* card */
+    #container {
+      background:rgba(0,0,0,0.5);
+      border-radius: 11px;
+      padding-bottom: 15px;
+      margin: 2.5rem auto 0px auto;
+      width: 449px;
+    }
+      #container_content {
+        padding: 9px 44px;
+      }
+        #judul {
+          font-family: "Raleway Thin", sans-serif;
+          letter-spacing: 4px;
+          padding-bottom: 23px;
+          text-align: center;
+        }
+          .underline{
+            background-color: rgb(149, 150, 184);
+            height: 2px;
+            margin: -1rem auto 0 auto;
+            width: 98px;
+            text-align: center;
+          }
+        .form {
+          align-items: left;
+          display: flex;
+          flex-direction: column;
+        }
+
+          label {
+            font-family: "Raleway", sans-serif;
+            font-size: 11pt;
+            padding-top: 9px;
+          }
+          label .bintang{
+              color: rgb(230, 3, 3);
+          }
+          .form_content {
+            background: rgba(0,0,0,0);
+            border: none;
+            color: rgb(204, 204, 204);
+            font-size: 18px;
+            outline: none;
+            padding-top: 14px;
+          }
+          .border_form {
+            background: -webkit-linear-gradient(right, rgb(2, 4, 83),rgb(6, 150, 216),rgb(0, 247, 255) );
+            height: 1px;
+            width: 100%;
+          }
+
+        .error{
+          color:red;  
+          font-size:12px;
+          text-align:right;
+        }
+        #Lupa_pass {
+          color: white;
+          font-family: "Raleway", sans-serif;
+          font-size: 10pt;
+          margin-top: 3px;
+          text-align: right;
+        }
+        #submit_button {
+          background: -webkit-linear-gradient(left,rgb(0, 1, 44),  rgb(2, 4, 83),rgb(6, 150, 216),rgb(0, 247, 255) );
+          border: none;
+          border-radius: 21px;
+          box-shadow: 0px 1px 8px #2442c6;
+          cursor: pointer;
+          color: white;
+          font-family: "Raleway SemiBold", sans-serif;
+          height: 42.3px;
+          margin: 0 auto;
+          margin-top: 35px;
+          transition: 0.25s;
+          width: 153px;
+        }
+        #submit_button:hover {
+        box-shadow: 0px 1px 18px #24bbc6;
+        }
+
+        #signup {
+          color: white;
+          font-family: "Raleway", sans-serif;
+          font-size: 10pt;
+          margin-top: 16px;
+          text-align: center;
+        }
+          #signup a{
+            color: rgb(0, 255, 255);
+            font-size: 18px;
+            font-weight: 600;
+          }
+</style>
+</head>
+<body background= "img/bg_daftar_seller.jpg">
+    <!-- logo -->
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.png" alt=""></a>
+    </div>
+    <!-- container -->
+    <div id="container">
+      <div id="container_content">
+        <div id="judul">
+          <h1>Daftar</h1>
+          <div class="underline"></div>
+        </div>
+        <form action="" method="post" class="form">
+          <label for="username" >
+           Username
+          </label>
+          <input id="username" class="form_content" type="text" name="username" autocomplete="off" onkeypress="return event.charCode < 48 || event.charCode>57" required />
+          <span class="border_form"></span>
+
+          <label for="email" >
+            Email
+          </label>
+          <input id="email" class="form_content" type="email" name="email" autocomplete="off" required />
+          <span class="border_form"></span>
+
+          <label for="tlp">
+            Nomor Telepon
+          </label>
+          <input id="tlp" type="text" name="tlp" class="form_content" maxlength="15" onkeypress="return hanyaAngka(event)" autocomplete="off" required>
+          <span class="border_form"></span>
+
+          <label for="password" >
+            Password <font style="font-size:11px; float:right; color:#777;">minimal 8 karakter</font>
+          </label>
+          <input id="password" class="form_content" type="password" name="password" minlength="8" required />
+          <span class="border_form"></span>
+          <label for="password2" >
+            Konfirmasi Password
+          </label>
+
+          <input id="password2" class="form_content" type="password" name="password2" required />
+          <span class="border_form"></span>
+
+          <button id="submit_button" type="submit" name="daftar" >DAFTAR</button>
+          <span id="signup">Sudah punya akun? <a href="Login-Client.html">Login</a> </span>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
+
+<script>
+        function hanyaAngka(event) {
+            var angka = (event.which) ? event.which : event.keyCode
+            if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+                return false;
+            return true;
+        }
+</script>
